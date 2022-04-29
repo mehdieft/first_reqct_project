@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import Button from './Button';
+const onClick=()=>{
+    console.log("im parent component");
+}
 
 
 const Header = ({title}) => {
@@ -7,7 +10,7 @@ const Header = ({title}) => {
     <header>
         <h1 style={headerStyle}>task  {title} </h1>
         <br></br>
-        <Button text='click mehdi' color='yellow'  />
+        <Button text='click mehdi' onClick={onClick} color='yellow'  />
 
     </header>
   )

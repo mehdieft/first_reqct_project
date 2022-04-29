@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
-const Button =({text,color})=>{
+// const onClick=()=>{
+//     console.log("hello")
+// }
+const Button =({text,color,onClick})=>{
     return (
-        <button style={{backgroundColor:color}} >{text}</button>
+        <button style={{backgroundColor:color}} onClick={onClick}>{text}</button>
     )
 }
 Button.prototypes={
