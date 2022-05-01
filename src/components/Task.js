@@ -8,8 +8,8 @@ const Task = ({ task, onDelete, onChangeReminder }) => {
 
                 </div>
                 <h3>{task.text}</h3>
-                <h6 style={date}>{task.day}</h6>
-                {task.reminder ? <span style={{ padding: '20px', backgroundColor: 'green' }}>reminder On</span> : <span style={{ padding: '20px', backgroundColor: 'red' }}>reminderOff</span>}
+                <h6 >{task.day}</h6>
+               {task.reminder? <div style={taskStyle}>REMINDED</div>:''}
                 <button onClick={() => onDelete(task.id)}> delete Task</button>
             </div>
         </div>
@@ -28,7 +28,14 @@ const divStyle = {
     flexDirection: 'column',
     // backgroundImage: `url(${reminderImage})`
 }
-const date={
+const taskStyle={
+    width:'100%',
+    position:'relative',
+    transform:'rotate(90deg)',
+    left: '-149px',
+    bottom:'74px',
+    backgroundColor:'green'
+
   
 
 }

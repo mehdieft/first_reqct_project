@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import './App.css';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import { useState } from "react"
+import AddReminder from './components/AddReminder';
 import reminderImage from './asset/reminder.jpg'
 
 
@@ -64,7 +66,7 @@ function App() {
   }
   const reminder = (id) => {
     console.log("reminder working", id)
-    setTasks(tasks.map((task)=>task.id==id ? { ...task, reminder: !task.reminder    }:task))
+    setTasks(tasks.map((task)=>task.id===id ? { ...task, reminder: !task.reminder    }:task))
   }
 
   return (
@@ -74,7 +76,8 @@ function App() {
       <h1>hello from {name}</h1>
       <hr></hr>
       <br></br>
-      <button onClick={consoleMe}>test me</button>
+    <button>add new</button> 
+    <AddReminder/>
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
 
 
