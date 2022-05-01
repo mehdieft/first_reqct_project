@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import './App.css';
+
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import { useState } from "react"
 import AddReminder from './components/AddReminder';
-import reminderImage from './asset/reminder.jpg'
+import reminderImage from './asset/reminder.jpg';
+import {Container} from './components/styles/Container.styled';
 
 
 function App() {
@@ -70,7 +71,7 @@ function App() {
   }
 
   return (
-    <div className="App" style={{margin:'120px'}}>
+    <Container>
       <Header />
       {/* every thing must be in this parent html */}
       <h1>hello from {name}</h1>
@@ -82,7 +83,7 @@ function App() {
 
 
      
-    </div>
+    </Container>
   );
 }
 
