@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import { useState } from "react"
+import reminderImage from './asset/reminder.jpg'
 
 
 function App() {
@@ -13,19 +14,19 @@ function App() {
     reminder: false
   },
   {
-    id: 1,
+    id: 12,
     text: 'remind me to learn programing propbly',
     day: '19_december_2022',
     reminder: false
   },
   {
-    id: 1,
+    id: 13,
     text: 'remind me to learn programing propbly',
     day: '19_december_2022',
     reminder: false
   },
   {
-    id: 1,
+    id: 14,
     text: 'remind me to learn programing propbly',
     day: '19_december_2022',
     reminder: false
@@ -63,10 +64,11 @@ function App() {
   }
   const reminder = (id) => {
     console.log("reminder working", id)
+    setTasks(tasks.map((task)=>task.id==id ? { ...task, reminder: !task.reminder    }:task))
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{margin:'120px'}}>
       <Header />
       {/* every thing must be in this parent html */}
       <h1>hello from {name}</h1>
@@ -76,6 +78,7 @@ function App() {
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
 
 
+     
     </div>
   );
 }
