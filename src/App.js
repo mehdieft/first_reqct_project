@@ -65,20 +65,20 @@ function App() {
     day: 'dasjkhdasgjagfkghsfagjk',
     reminder: true
   }])
-  // const deleteTask = (id) => {
-  //   console.log("this is id -----><", id);
-  //   setTasks(tasks.filter((task) => task.id !== id))
-  // }
-  // const consoleMe = () => {
-  //   console.log("this is test");
-  // }
-  // const reminder = (id) => {
-  //   console.log("reminder working", id)
-  //   setTasks(tasks.map((task)=>task.id===id ? { ...task, reminder: !task.reminder    }:task))
-  // }
-  // const addTask=(object)=>{
-  //   console.log("this is object",object)
-  // }
+  const deleteTask = (id) => {
+    console.log("this is id -----><", id);
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+  const consoleMe = () => {
+    console.log("this is test");
+  }
+  const reminder = (id) => {
+    console.log("reminder working", id)
+    setTasks(tasks.map((task)=>task.id===id ? { ...task, reminder: !task.reminder    }:task))
+  }
+  const addTask=(object)=>{
+    console.log("this is object",object)
+  }
 const theme={
   colors:{
     header:'#ebfbff',
@@ -86,28 +86,29 @@ const theme={
   }
 }
   return (
-    // <Container>
-    //   <StyledPaperExample></StyledPaperExample>
+
+   <Container>
       
-    //   <Header />
-    //   {/* every thing must be in this parent html */}
-    //   <h1>hello from {name}</h1>
-    //   <hr></hr>
-    //   <br></br>
-    // <button>add new</button> 
-    // <AddTask onAddTask={addTask}/>
-    //   {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
-    // </Container>
-    <ThemeProvider theme={theme}>
-    <>
+      
+      <Header />
+    
+       <h1>hello from {name}</h1>
+       <hr></hr>
+       <br></br>
+     <button>add new</button> 
+     <AddTask onAddTask={addTask}/>
+       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
+   
+    
     <Container>
       <StyledHeader bg='#2314234223'>
         <h1>this is test header</h1>
       </StyledHeader >
     </Container>
 
-    </>
-    </ThemeProvider>
+</Container>
+  
+   
 
 
 
