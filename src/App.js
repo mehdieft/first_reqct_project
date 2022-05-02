@@ -3,13 +3,14 @@
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import { useState } from "react"
-import AddReminder from './components/AddReminder';
+import AddTask from './components/AddTask';
 import reminderImage from './asset/reminder.jpg';
 import {Container} from './components/styles/Container.styled';
 
 
 function App() {
   const name = 'mehdi saedi'
+ 
   const [tasks, setTasks] = useState([{
     id: 1,
     text: 'remind me to learn programing propbly',
@@ -69,16 +70,20 @@ function App() {
     console.log("reminder working", id)
     setTasks(tasks.map((task)=>task.id===id ? { ...task, reminder: !task.reminder    }:task))
   }
+  const addTask=(object)=>{
+    console.log("this is object",object)
+  }
 
   return (
     <Container>
+      
       <Header />
       {/* every thing must be in this parent html */}
       <h1>hello from {name}</h1>
       <hr></hr>
       <br></br>
     <button>add new</button> 
-    <AddReminder/>
+    <AddTask onAddTask={addTask}/>
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
 
 
