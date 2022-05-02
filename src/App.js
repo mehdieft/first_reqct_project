@@ -42,7 +42,20 @@ function App() {
     setTasks(tasks.map((task)=>task.id===id ? { ...task, reminder: !task.reminder    }:task))
   }
   const addTask=(object)=>{
-    console.log("this is object",object)
+    console.log("this is object",object);
+    const newTask={
+      id:'',
+      text:'',
+      day:'',
+      reminder:false
+    }
+    newTask.id=Math.random()*100+1;
+    newTask.text=object.task;
+    newTask.day=object.day;
+    newTask.reminder=object.reminder;
+   setTasks(tasks=>[...tasks,newTask])
+    console.log("added new task",tasks);
+
   }
 const theme={
   colors:{
