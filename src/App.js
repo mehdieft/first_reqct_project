@@ -7,7 +7,8 @@ import AddTask from './components/AddTask';
 import reminderImage from './asset/reminder.jpg';
 import {Container} from './components/styles/Container.styled';
 import {StyledPaperExample} from './components/styles/Button.styled';
-import {ThemeProvider} from 'styled-components'
+import {ThemeProvider} from 'styled-components';
+import Item from './components/toturialComponents/Item';
 
 
 
@@ -16,6 +17,29 @@ import {StyledHeader} from './components/styles/Header.styled'
 
 function App() {
   const name = 'mehdi saedi'
+  const [flagItemOrTask ,setTaskItemFlag]=useState(false);
+  const [item,SetItem]=useState([
+    {
+      id:1,
+      item:'hello',
+      flag:false
+    },
+    {
+      id:4,
+      item:'hello',
+      flag:false
+    },
+    {
+      id:3,
+      item:'hello',
+      flag:false
+    },
+    {
+      id:2,
+      item:'hello',
+      flag:false
+    },
+  ])
  
   const [tasks, setTasks] = useState([{
     id: 1,
@@ -73,14 +97,15 @@ const theme={
        <h1>hello from {name}</h1>
        <hr></hr>
        <br></br>
+      
      <AddTask onAddTask={addTask}/>
-       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
    
-    
     <Container>
-      <StyledHeader bg='#2314234223'>
+      {/* <StyledHeader bg='#2314234223'>
         <h1>this is test header</h1>
-      </StyledHeader >
+      </StyledHeader > */}
+      <Item></Item>
     </Container>
 
 </Container>
