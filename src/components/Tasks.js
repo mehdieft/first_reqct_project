@@ -1,11 +1,16 @@
 
 import Task from './Task'
-const Tasks=({tasks,onDelete,onChangeReminder})=>{
-    
+const Tasks = ({ tasks, onDelete, onChangeReminder }) => {
+
     return (
-        <div style={{display: 'flex',flexDirection:'column',maxWidth:'90%',flexWrap:'wrap', justifyContent:'space-between',alignItem:'center'}}>
-        {tasks.map((task)=>( (<Task key={task.id}  task={task} onDelete={onDelete} onChangeReminder={onChangeReminder}  />)))}
-        </div>
+        <>
+            <br></br><br></br>
+            <div style={{ display: 'flex', flexDirection: 'row',
+             maxWidth: '90%', flexWrap: 'wrap', justifyContent: 'space-between', alignItem: 'center' }}>
+                {tasks.map((task) => ((<Task key={task.id} task={task} onDelete={onDelete} 
+                onChangeReminder={onChangeReminder} />)))}
+            </div>
+        </>
 
     )
 }

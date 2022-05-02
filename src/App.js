@@ -29,42 +29,7 @@ function App() {
     day: '19_december_2022',
     reminder: false
   },
-  {
-    id: 13,
-    text: 'remind me to learn programing propbly',
-    day: '19_december_2022',
-    reminder: false
-  },
-  {
-    id: 14,
-    text: 'remind me to learn programing propbly',
-    day: '19_december_2022',
-    reminder: false
-  },
-  {
-    id: 2,
-    text: 'dsafgsdjgfasdfhgsadhfksah',
-    day: 'dasjkhdasgjagfkghsfagjk',
-    reminder: true
-  },
-  {
-    id: 3,
-    text: 'dsafgsdjgfasdfhgsadhfksah',
-    day: 'dasjkhdasgjagfkghsfagjk',
-    reminder: true
-  },
-  {
-    id: 4,
-    text: 'dsafgsdjgfasdfhgsadhfksah',
-    day: 'dasjkhdasgjagfkghsfagjk',
-    reminder: true
-  },
-  {
-    id: 5,
-    text: 'dsafgsdjgfasdfhgsadhfksah',
-    day: 'dasjkhdasgjagfkghsfagjk',
-    reminder: true
-  }])
+ ])
   const deleteTask = (id) => {
     console.log("this is id -----><", id);
     setTasks(tasks.filter((task) => task.id !== id))
@@ -95,7 +60,6 @@ const theme={
        <h1>hello from {name}</h1>
        <hr></hr>
        <br></br>
-     <button>add new</button> 
      <AddTask onAddTask={addTask}/>
        {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
    
