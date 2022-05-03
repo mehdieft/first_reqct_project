@@ -2,7 +2,8 @@ const MainHeader=()=>{
     return (
         <>
         
-        
+        <h1>main header</h1>
+
         </>
     )
 }

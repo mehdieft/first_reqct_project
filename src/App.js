@@ -3,7 +3,7 @@
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import {StyledPaperExample} from './components/styles/Button.styled';
-import {ThemeProvider} from 'styled-components';
+import {ThemeProvider} from 'styled-components';  
 import AddTask from './components/AddTask';
 import reminderImage from './asset/reminder.jpg';
 import { useState ,useEffect } from "react"
@@ -99,6 +99,15 @@ const theme={
   return (
 
    <Container>
+     <MainHeader/>
+     <MainNav/>
+     <Switch>
+       <Route path="/">
+         <Home/>
+       </Route>
+       <Route path="/about"></Route>
+
+     </Switch>
       
       
      {/*  <Header />
