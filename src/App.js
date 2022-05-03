@@ -2,13 +2,22 @@
 
 import Header from './components/Header';
 import Tasks from './components/Tasks';
-import { useState } from "react"
-import AddTask from './components/AddTask';
-import reminderImage from './asset/reminder.jpg';
-import {Container} from './components/styles/Container.styled';
 import {StyledPaperExample} from './components/styles/Button.styled';
 import {ThemeProvider} from 'styled-components';
+import AddTask from './components/AddTask';
+import reminderImage from './asset/reminder.jpg';
+import { useState ,useEffect } from "react"
+import {Container} from './components/styles/Container.styled';
 import Item from './components/toturialComponents/Item';
+
+import MainHeader from './components/RouterPages/MainHeader';
+import MainNav from './components/RouterPages/MainNav';
+import MainFooter from './components/RouterPages/MainFooter';
+import Home from './components/RouterPages/Home';
+import NewPost from './components/RouterPages/NewPost';
+import About from './components/RouterPages/About';
+import Missing from './components/RouterPages/Missing';
+import {Route, Switch, useHistory} from 'react-router-dom';
 
 
 
@@ -92,7 +101,7 @@ const theme={
    <Container>
       
       
-      <Header />
+     {/*  <Header />
     
        <h1>hello from {name}</h1>
        <hr></hr>
@@ -102,13 +111,12 @@ const theme={
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onChangeReminder={reminder} /> : <h2>nothing to show</h2>}
    
     <Container>
-      {/* <StyledHeader bg='#2314234223'>
+      <StyledHeader bg='#2314234223'>
         <h1>this is test header</h1>
       </StyledHeader > */}
       <Item></Item>
     </Container>
 
-</Container>
   
    
 
