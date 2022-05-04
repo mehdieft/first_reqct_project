@@ -2,12 +2,12 @@
 
 import Header from './components/Header';
 import Tasks from './components/Tasks';
-import {StyledPaperExample} from './components/styles/Button.styled';
-import {ThemeProvider} from 'styled-components';  
+import { StyledPaperExample } from './components/styles/Button.styled';
+import { ThemeProvider } from 'styled-components';
 import AddTask from './components/AddTask';
 import reminderImage from './asset/reminder.jpg';
-import { useState ,useEffect } from "react"
-import {Container} from './components/styles/Container.styled';
+import { useState, useEffect } from "react"
+import { Container } from './components/styles/Container.styled';
 import Item from './components/toturialComponents/Item';
 
 import MainHeader from './components/RouterPages/MainHeader';
@@ -17,39 +17,41 @@ import Home from './components/RouterPages/Home';
 import NewPost from './components/RouterPages/NewPost';
 import About from './components/RouterPages/About';
 import Missing from './components/RouterPages/Missing';
-import {Route, Switch, useHistory} from 'react-router-dom';
+import Post from './components/RouterPages/Post';
+import PostList from './components/RouterPages/PostList';
 
 
 
-import {StyledHeader} from './components/styles/Header.styled'
+import {Routes,BrowserRouter as Router,Route } from 'react-router-dom';
+import { StyledHeader } from './components/styles/Header.styled'
 
 
 function App() {
   const name = 'mehdi saedi'
-  const [flagItemOrTask ,setTaskItemFlag]=useState(false);
-  const [item,SetItem]=useState([
+  const [flagItemOrTask, setTaskItemFlag] = useState(false);
+  const [item, SetItem] = useState([
     {
-      id:1,
-      item:'hello',
-      flag:false
+      id: 1,
+      item: 'hello',
+      flag: false
     },
     {
-      id:4,
-      item:'hello',
-      flag:false
+      id: 4,
+      item: 'hello',
+      flag: false
     },
     {
-      id:3,
-      item:'hello',
-      flag:false
+      id: 3,
+      item: 'hello',
+      flag: false
     },
     {
-      id:2,
-      item:'hello',
-      flag:false
+      id: 2,
+      item: 'hello',
+      flag: false
     },
   ])
- 
+
   const [tasks, setTasks] = useState([{
     id: 1,
     text: 'remind me to learn programing propbly',
@@ -62,7 +64,7 @@ function App() {
     day: '19_december_2022',
     reminder: false
   },
- ])
+  ])
   const deleteTask = (id) => {
     console.log("this is id -----><", id);
     setTasks(tasks.filter((task) => task.id !== id))
@@ -72,45 +74,45 @@ function App() {
   }
   const reminder = (id) => {
     console.log("reminder working", id)
-    setTasks(tasks.map((task)=>task.id===id ? { ...task, reminder: !task.reminder    }:task))
+    setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task))
   }
-  const addTask=(object)=>{
-    console.log("this is object",object);
-    const newTask={
-      id:'',
-      text:'',
-      day:'',
-      reminder:false
+  const addTask = (object) => {
+    console.log("this is object", object);
+    const newTask = {
+      id: '',
+      text: '',
+      day: '',
+      reminder: false
     }
-    newTask.id=Math.random()*100+1;
-    newTask.text=object.task;
-    newTask.day=object.day;
-    newTask.reminder=object.reminder;
-   setTasks(tasks=>[...tasks,newTask])
-    console.log("added new task",tasks);
+    newTask.id = Math.random() * 100 + 1;
+    newTask.text = object.task;
+    newTask.day = object.day;
+    newTask.reminder = object.reminder;
+    setTasks(tasks => [...tasks, newTask])
+    console.log("added new task", tasks);
 
   }
-const theme={
-  colors:{
-    header:'#ebfbff',
-    body:''
+  const theme = {
+    colors: {
+      header: '#ebfbff',
+      body: ''
+    }
   }
-}
   return (
 
-   <Container>
-     <MainHeader/>
-     <MainNav/>
-     <Switch>
-       <Route path="/">
-         <Home/>
-       </Route>
-       <Route path="/about"></Route>
+    <Router>
 
-     </Switch>
-      
-      
-     {/*  <Header />
+    <Container>
+      <h1>dsadasdas</h1>
+      <MainHeader/>
+      <Routes  >
+      <Route path="/about" element={<About/>} />
+      </Routes>
+   
+      <MainFooter />
+
+
+      {/*  <Header />
     
        <h1>hello from {name}</h1>
        <hr></hr>
@@ -125,9 +127,10 @@ const theme={
       </StyledHeader > */}
       <Item></Item>
     </Container>
+    </Router>
 
-  
-   
+
+
 
 
 
