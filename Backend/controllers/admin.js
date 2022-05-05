@@ -13,10 +13,15 @@ exports.postAddProduct = (req, res, next) => {
   const imageUrl = req.body.imageUrl;
   const price = req.body.price;
   const description = req.body.description;
-  const product = new Product(null, title, imageUrl, description, price);
-  product.save().then(()=>{
-
-   });
+  Product.create({
+    title:title,
+    price:price,
+    imageUrl:imageUrl,
+    description:description
+  }).then((res)=>{
+    console.log("datqa inserted in product database");
+  }).catch()
+  
 };
 
 exports.getEditProduct = (req, res, next) => {

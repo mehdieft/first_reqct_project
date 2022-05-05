@@ -3,7 +3,7 @@ const sequelize=require('../util/database');
 
 
 
-const user=sequelize.define('user',{
+const User=sequelize.define('user',{
     id:{
         type:Sequelize.INTEGER,
         allowNull:false,
@@ -17,4 +17,4 @@ const user=sequelize.define('user',{
     email:{type:Sequelize.STRING,allowNull:false,unique:true},
     phone:{type:Sequelize.STRING,allowNull:false,unique:true}
 })
-module.exports=user;
+module.exports=User;
