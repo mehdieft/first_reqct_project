@@ -7,28 +7,32 @@ exports.getProducts = (req, res, next) => {
       prods: rows,
       pageTitle: 'All Products',
       path: '/products'
-    });
+    })
 
   })
 
   .catch(err=>console.log("error",err))
 };
-
+//findById cause error===>use findByPk() method instead
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
-  Product.findById(prodId, product => {
+  Product.findByPk(prodId).then(data=>{
     res.render('shop/product-detail', {
-      product: product,
-      pageTitle: product.title,
+      product: data,
+      pageTitle: data.title,
       path: '/products'
     });
-  });
+  })
+  .catch((err)=>{
+    console.log("error on findById");
+  })
+
 };
 
 exports.getIndex = (req, res, next) => {
-  Product.fetchAll().then(([rows,datafields])=>{
+  Product.findAll().then((data)=>{
     res.render('shop/index', {
-      prods: rows,
+      prods: data,
       pageTitle: 'Shop',
       path: '/'
     });

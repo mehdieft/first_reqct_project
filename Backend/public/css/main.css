@@ -37,6 +37,12 @@ form {
   display: none;
   align-items: center;
 }
+.image{
+  height:20rem;
+}
+.image img{
+  height:100%;
+}
 
 .main-header__item-list {
   list-style: none;
