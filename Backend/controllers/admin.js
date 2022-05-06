@@ -79,3 +79,4 @@ exports.postDeleteProduct = (req, res, next) => {
   res.redirect('/admin/products');
 };
 //ghsfjgsdffsd///adminjs comments
+// another comments
