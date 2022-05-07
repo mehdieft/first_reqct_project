@@ -102,13 +102,17 @@ function App() {
 
     <Router>
 
-    <Container>
-      <h1>dsadasdas</h1>
       <MainHeader/>
+    <Container>
+     
+      <div style={{margin:'0 auto',minHeight:'30rem'}}>
+
       <Routes  >
       <Route path="/about" element={<About/>} />
       </Routes>
+      </div>
    
+      </Container>
       <MainFooter />
 
 
@@ -126,7 +130,6 @@ function App() {
         <h1>this is test header</h1>
       </StyledHeader > */}
       <Item></Item>
-    </Container>
     </Router>
 
 
