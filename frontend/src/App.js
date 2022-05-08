@@ -105,9 +105,9 @@ function App() {
     <Router>
 
       <MainHeader />
-      <Container>
+      
 
-        <div style={{ margin: '0 auto', minHeight: '30rem' }}>
+        <div >
 
           <Routes  >
             <Route path="/about" element={<About />} />
@@ -116,7 +116,7 @@ function App() {
           </Routes>
         </div>
 
-      </Container>
+     
       <MainFooter />
 
 
