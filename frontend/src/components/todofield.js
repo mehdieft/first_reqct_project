@@ -1,15 +1,15 @@
 const TodoField = () => {
     return (
-        <div className="d-flex flex-column w-80 ">
+        <div className="d-flex flex-column w-80 mh-100 overflow-auto">
             <h2>
                 todo field type
             </h2>
             <input type="text" className="mt-4 mb-4 form-control form-control-sm" />
-            <div class="input-group">
-                <div class="input-group-prepend">
+            <div className="input-group">
+                <div className="input-group-prepend">
                     
                 </div>
-                <textarea class="form-control my-4" aria-label="With textarea"></textarea>
+                <textarea class="form-control my-4" style={{height:'150px' ,overflow:'auto'}} aria-label="With textarea"></textarea>
             </div>
 
             <button className="btn btn-success" type="submit">

@@ -107,7 +107,7 @@ function App() {
       <MainHeader />
       
 
-        <div >
+        <div style={{minHeight:'40rem'}}>
 
           <Routes  >
             <Route path="/about" element={<About />} />

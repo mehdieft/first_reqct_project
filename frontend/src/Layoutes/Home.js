@@ -13,10 +13,13 @@ const Home=()=>{
             id:2,
             title:'simple title',
             content:'lorem-19Ut cillum quis in do non. Ullamco consequat aute adipisicing mollit Lorem irure. Labore eu amet fugiat officia ex enim.'
-
+            
         }
     ])
-    console.log(todo);
+
+    const deleteTask=(id)=>{
+        setTodo(todo.filter((item)=>item.id != id))
+    }
     return (
         <div style={{backgroundColor:'red'}}>
 
@@ -29,7 +32,7 @@ const Home=()=>{
 
             </div>
             <div style={{display:'inline-block', width:'70vh',marginLeft:'40px',float:'right'}}>
-                {todo.map(item=><Todo item={item} />)}
+                {todo.map(item=><Todo item={item} key={item.id} onDeleteTodo={deleteTask} />)}
                 {/* <Todo/>
                 <Todo/> */}
                 
