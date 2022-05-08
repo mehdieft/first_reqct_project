@@ -8,6 +8,7 @@ import AddTask from './components/AddTask';
 import reminderImage from './asset/reminder.jpg';
 import { useState, useEffect } from "react"
 import { Container } from './components/styles/Container.styled';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import MainHeader from './Layoutes/MainHeader';
@@ -110,6 +111,7 @@ function App() {
 
           <Routes  >
             <Route path="/about" element={<About />} />
+            <Route path="/" element={<Home/>}/>
             
           </Routes>
         </div>
