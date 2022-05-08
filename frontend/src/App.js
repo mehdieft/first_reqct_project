@@ -8,21 +8,22 @@ import AddTask from './components/AddTask';
 import reminderImage from './asset/reminder.jpg';
 import { useState, useEffect } from "react"
 import { Container } from './components/styles/Container.styled';
-import Item from './components/toturialComponents/Item';
-
-import MainHeader from './components/RouterPages/MainHeader';
-import MainNav from './components/RouterPages/MainNav';
-import MainFooter from './components/RouterPages/MainFooter';
-import Home from './components/RouterPages/Home';
-import NewPost from './components/RouterPages/NewPost';
-import About from './components/RouterPages/About';
-import Missing from './components/RouterPages/Missing';
-import Post from './components/RouterPages/Post';
-import PostList from './components/RouterPages/PostList';
 
 
+import MainHeader from './Layoutes/MainHeader';
+import MainNav from './Layoutes/MainNav';
+import MainFooter from './Layoutes/MainFooter';
+import Home from './Layoutes/Home';
+import NewPost from './Layoutes/NewPost';
+import About from './Layoutes/About';
+import Missing from './Layoutes/Missing';
+import Post from './Layoutes/Post';
+import PostList from './Layoutes/PostList';
 
-import {Routes,BrowserRouter as Router,Route } from 'react-router-dom';
+
+
+
+import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import { StyledHeader } from './components/styles/Header.styled'
 
 
@@ -102,16 +103,17 @@ function App() {
 
     <Router>
 
-      <MainHeader/>
-    <Container>
-     
-      <div style={{margin:'0 auto',minHeight:'30rem'}}>
+      <MainHeader />
+      <Container>
 
-      <Routes  >
-      <Route path="/about" element={<About/>} />
-      </Routes>
-      </div>
-   
+        <div style={{ margin: '0 auto', minHeight: '30rem' }}>
+
+          <Routes  >
+            <Route path="/about" element={<About />} />
+            
+          </Routes>
+        </div>
+
       </Container>
       <MainFooter />
 
@@ -129,7 +131,7 @@ function App() {
       <StyledHeader bg='#2314234223'>
         <h1>this is test header</h1>
       </StyledHeader > */}
-      <Item></Item>
+    
     </Router>
 
 

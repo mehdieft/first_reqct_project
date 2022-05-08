@@ -1,4 +1,4 @@
-import pezeshkan from '../../asset/pezeshkan.svg'
+import pezeshkan from '../asset/pezeshkan.svg'
 import {FaBars} from 'react-icons/fa'
 
 const MainHeader=()=>{
