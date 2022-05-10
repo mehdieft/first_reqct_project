@@ -25,14 +25,16 @@ const Home=()=>{
 
     const saveData=(todoObject)=>{
         console.log("this is object parrent",todoObject)
-        const newTodo={
-            ...todoObject,
-            id:Math.random()*100
-        }
-        console.log("this is new item",newTodo)
-        setTodo((todo)=>{
-            todo.push(newTodo)
-        });
+        setTodo((prevTodoList)=>{
+            return [
+                ...prevTodoList,{
+                    id:Math.random()*100,title:todoObject.title,content:todoObject.content
+                }
+
+            ]
+
+        })
+    
 
     }
     return (
