@@ -1,25 +1,38 @@
 import pezeshkan from '../asset/pezeshkan.svg'
-import {FaBars} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { FaBars } from 'react-icons/fa';
+import '../asset/header.css'
 
-const MainHeader=()=>{
+const MainHeader = () => {
     return (
         <>
-        <div style={{backgroundColor:'#e91e63',height:'120px',}}>
+            <div style={{ backgroundColor: '#e91e63', height: '120px', }}>
 
-            <section style={{display:'inline-block',margin:'8px',}}>
-            <img src={pezeshkan} width="70px" height="70px" alt="pezeshkan logo" />
-            <span 
-            style={{color:'white',display:'block',
-           position:'relative',}}>pezeshkan </span>
+                <section style={{float:'left'}}>
+                    <img className="header-image-icon" src={pezeshkan} width="70px" height="70px" alt="pezeshkan logo" />
+                    <span
+                        style={{
+                            color: 'white', display: 'block',
+                            position: 'relative',
+                            float:'left',
+                            padding:'30px 0',
+                        }}>pezeshkan </span>
+                    <ul className="header-navigation">
+                        <li className="first-list-item"><a href="#">home</a> </li> 
+                        <li><a href="#">home</a> </li>
+                        <li><a href="#">home</a> </li>
+                        <li><a href="#">home</a> </li>
 
-            </section>
-            <section style={{display:'inline-block',float:'right',margin:'10px'}}>
+                    </ul>
 
-            <FaBars></FaBars>
-            </section>
+                </section>
+                <section style={{ display: 'inline-block', float: 'right', margin: '10px' }}>
 
-        </div>
-        
+                    <FaBars></FaBars>
+                </section>
+
+            </div>
+
 
         </>
     )

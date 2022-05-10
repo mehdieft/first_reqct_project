@@ -1,0 +1,31 @@
+.header-image-icon{
+    float: left;
+    vertical-align: middle;
+}
+.header-navigation{
+    margin-left:140px;
+}
+li {
+    display: inline-block;
+    margin:0 30px;
+    padding:27px 0;
+
+
+}
+li a{
+    text-decoration: none;
+    color:white;
+    font-size:20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.first-list-item{
+    margin-left:140px;
+}
+a{
+    text-decoration: none;
+    transition: color 0.6s;
+}
+a:hover{
+    color:hsl(191, 56%, 13%);
+
+}
