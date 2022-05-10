@@ -77,7 +77,10 @@ const Post=()=>{
                 </li>
                 
 
-                
+
+
+
+
 
             </ul>
         </div>
