@@ -5,15 +5,15 @@
 }
 
 .error-wrapper{
-    width:700px;
+    width:00px;
     display:inline-block;
     /* background-color: white; */
     animation: dialog 3s 1;
-    background-color:#e11eaa;
+    background-color:azure;
     position:fixed;
     left:30%;
     z-index: 100;
-    height:400px;
+    height:300px;
     border-radius: 10px;
 }
 @keyframes dialog{
