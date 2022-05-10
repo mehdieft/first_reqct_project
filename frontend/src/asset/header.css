@@ -5,7 +5,7 @@
 .header-navigation{
     margin-left:140px;
 }
-li {
+.header-navigation li {
     display: inline-block;
     margin:0 30px;
     padding:27px 0;
