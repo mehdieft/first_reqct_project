@@ -1,5 +1,6 @@
 import TodoField from '../components/todofield'
 import Todo from '../components/Todo';
+import ErrorDialog from '../components/ErrorDialog';
 import { useState } from 'react';
 
 const Home=()=>{
@@ -38,7 +39,8 @@ const Home=()=>{
 
     }
     return (
-        <div style={{backgroundColor:'red'}}>
+        <div style={{backgroundColor:'#c0d2e4'}}>
+            <ErrorDialog title="title dialog"  content="error qcuured" />
 
         <div className="row container  m-auto" style={{backgroundColor:'#7b6868',marginTop:'40px'}}>
        
