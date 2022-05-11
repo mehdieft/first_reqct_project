@@ -26,8 +26,10 @@ const Post=()=>{
                 <li>
                     <ul className="inner-list">
                         <li>
-                            <img src={hamber}/>
-                            <span className="image-name">(۱)
+                            <img src={hamber} alt="hamber"/>
+                            <span className="image-name">
+                                (۱)
+                              
                                 همبرگر ممتاز </span>
                         </li>
                         <li>
