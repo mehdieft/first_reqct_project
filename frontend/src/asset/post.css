@@ -5,8 +5,8 @@
 }
 .wrapper{
     display: inline-block;
-    width:800px;
-    height:800px;
+    width:80rem;
+    height:80rem;
     position: relative;
     right:30%
 
@@ -17,8 +17,8 @@
 
 }
 img {
-    width:100px;
-    height:100px
+    width:10rem;
+    height:10rem;
 }
 .image-name{
     margin-right:40px;
@@ -33,6 +33,6 @@ img {
     display:inline-block;
 }
 .inner-list li:first-child{
-    margin-left:320px;
+    margin-left:32rem;
 }
 

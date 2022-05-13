@@ -21,7 +21,6 @@ const MainHeader = () => {
                         <li className="first-list-item"><a href="#">home</a> </li> 
                         <li><a href="#">home</a> </li>
                         <li><a href="#">home</a> </li>
-                        <li><a href="#">home</a> </li>
 
                     </ul>
 

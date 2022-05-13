@@ -3,7 +3,7 @@
     vertical-align: middle;
 }
 .header-navigation{
-    margin-left:140px;
+    margin-left:14rem;
 }
 .header-navigation li {
     display: inline-block;
@@ -19,7 +19,7 @@ li a{
     font-family: 'Courier New', Courier, monospace;
 }
 .first-list-item{
-    margin-left:140px;
+    margin-left:14rem;
 }
 a{
     text-decoration: none;

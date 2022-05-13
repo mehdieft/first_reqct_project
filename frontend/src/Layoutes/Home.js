@@ -40,7 +40,9 @@ const Home=()=>{
     }
     return (
         <div style={{backgroundColor:'#c0d2e4'}}>
-            <ErrorDialog title="title dialog"  content="error qcuured" />
+            {1>2?
+            <ErrorDialog title="title dialog"  content="error qcuured" />:''
+            }
 
         <div className="row container  m-auto" style={{backgroundColor:'#7b6868',marginTop:'40px'}}>
        
