@@ -9,7 +9,7 @@ const MainHeader = () => {
             <div style={{ backgroundColor: '#e91e63', height: '120px', }}>
 
                 <section style={{float:'left'}}>
-                    <img className="header-image-icon" src={pezeshkan} width="70px" height="70px" alt="pezeshkan logo" />
+                    <img className="header-image-icon" src={pezeshkan} width="7rem" height="7rem" alt="pezeshkan logo" />
                     <span
                         style={{
                             color: 'white', display: 'block',
