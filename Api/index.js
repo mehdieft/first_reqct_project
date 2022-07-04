@@ -1,5 +1,6 @@
 const appRootPath = require("app-root-path");
 const express = require("express");
+const Joi = require('joi');
 const course = [
     { id: 1, name: 'course 1' },
     { id: 2, name: 'course 2' },
@@ -42,12 +43,20 @@ app.get('/test/:id', (req, res) => {
     }
 })
 app.post("/test", (req, res) => {
-    const newcourse = {
-        id: course.length + 1,
-        name: req.body.name
+    const schema = Joi.object({ name: Joi.string() .min(6) .required(),})
+
+   const result=schema.validate(req.body)
+   if(result.error) {
+    res.status(400).send(result.error);
+
+   }else{
+    const courseItem={
+        id:course.length+1,
+        name:req.body.name
     }
-    course.push(newcourse)
-    res.send(course)
+    course.push(courseItem);
+    res.send(course);
+   }
 
 })
 app.listen(port, () => { console.log(`Example app listening on port ${port}!`) });
