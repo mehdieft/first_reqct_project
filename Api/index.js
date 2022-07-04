@@ -1,5 +1,6 @@
 const appRootPath = require("app-root-path");
 const express = require("express");
+const customVlidate=require('./_helper/validationRequest');
 const Joi = require('joi');
 const course = [
     { id: 1, name: 'course 1' },
@@ -42,11 +43,9 @@ app.get('/test/:id', (req, res) => {
     }
 })
 app.post("/test", (req, res) => {
-    const schema = Joi.object({ name: Joi.string() .min(6) .required(),})
-
-   const result=schema.validate(req.body)
-   if(result.error) {
-    res.status(400).send(result.error.details[0].message);
+  const {eror}=customVlidate(req.body)
+   if(eror) {
+    res.status(400).send(eror.details[0].message);
 
    }else{
     const courseItem={
@@ -63,10 +62,10 @@ app.put('/test/:id',(req,res)=>{
     const id = parseInt(req.params.id);
     coursesList = course.find(c => c.id === id);
     if (!coursesList) res.status(404).send("not found")
-    const schema=Joi.object({ name: Joi.string() .min(3) .required(),})
-    const result=schema.validate(req.body);
-    if(result.error){
-        res.status(400).send(result.error.details[0].message)
+    const {error}=customVlidate(req.body)
+   
+    if(error){
+        res.status(400).send(error.details[0].message)
     }else{
         selected=course.find(c=>c.id===parseInt(req.params.id))
         selected.name=req.body.name
