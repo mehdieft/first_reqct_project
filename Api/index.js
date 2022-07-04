@@ -34,7 +34,6 @@ app.get('/test', (req, res) => {
 app.get('/test/:id', (req, res) => {
 
     const id = parseInt(req.params.id);
-    console.log("typeeee----->", typeof (id))
     coursesList = course.find(c => c.id === id);
     if (!coursesList) {
         res.status(404).send("not found")
@@ -47,7 +46,7 @@ app.post("/test", (req, res) => {
 
    const result=schema.validate(req.body)
    if(result.error) {
-    res.status(400).send(result.error);
+    res.status(400).send(result.error.details[0].message);
 
    }else{
     const courseItem={
@@ -59,4 +58,20 @@ app.post("/test", (req, res) => {
    }
 
 })
+
+app.put('/test/:id',(req,res)=>{
+    const id = parseInt(req.params.id);
+    coursesList = course.find(c => c.id === id);
+    if (!coursesList) res.status(404).send("not found")
+    const schema=Joi.object({ name: Joi.string() .min(3) .required(),})
+    const result=schema.validate(req.body);
+    if(result.error){
+        res.status(400).send(result.error.details[0].message)
+    }else{
+        selected=course.find(c=>c.id===parseInt(req.params.id))
+        selected.name=req.body.name
+    }
+
+})
+
 app.listen(port, () => { console.log(`Example app listening on port ${port}!`) });
